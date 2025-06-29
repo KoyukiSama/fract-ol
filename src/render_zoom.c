@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/17 18:32:43 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/06/26 15:33:27 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/06/29 21:35:03 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,17 @@
 #include <math.h>
 #include <stdbool.h>
 
-//static t_nbr_i	get_mouse_pos(t_render render, int32_t x, int32_t y);
 static void		move(t_render *render, uint32_t x, uint32_t y);
-static void		zoom_center(t_render *render, uint32_t ydelta);
+static void		zoom_center(t_render *render, double ydelta);
 static void		boundry_correction(t_render *render);
 
 void	zoom(t_render *render, double ydelta)
 {
 	int32_t	x;
 	int32_t	y;
-	//t_nbr_i	mouse_pos;
 
 	if (ydelta > 0)
 	{
-		//mouse_pos = get_mouse_pos(*render, x, y);
 		mlx_get_mouse_pos(render->mlx, &x, &y);
 		move(render, x, y);
 		zoom_center(render, ydelta);
@@ -70,7 +67,7 @@ static void	move(t_render *render, uint32_t x, uint32_t y)
 		move_down(render, (render->img->width / 2) - y);
 }
 
-static void	zoom_center(t_render *render, uint32_t ydelta)
+static void	zoom_center(t_render *render, double ydelta)
 {
 	t_nbr_i	center;
 	t_nbr_i	offset;

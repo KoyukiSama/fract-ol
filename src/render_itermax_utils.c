@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/11 15:17:28 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/06/29 21:00:36 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/06/29 21:27:25 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ static int	pick_itersmax(double zoom)
 {
 	if (zoom > 2.0)
 		return (50);
-    else if (zoom > 0.1)
-		return (100);
     else if (zoom > 0.01)
-		return (300);
+		return (100);
     else if (zoom > 0.001)
-		return (500);
+		return (200);
     else if (zoom > 0.0001)
-		return (700);
+		return (300);
     else if (zoom > 0.00001)
+		return (400);
+    else if (zoom > 0.0000001)
+		return (500);
+	else if (zoom > 0.00000001)
 		return (1000);
-	else if (zoom > 0.000001)
-		return (1300);
 	else
 		return (1500);
 }
