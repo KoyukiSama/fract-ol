@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/11 19:19:41 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/06/29 21:32:52 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/06/29 21:50:24 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ void	key_hook(mlx_key_data_t keydata, void *render)
 	{
 		close_hook(render);
 	}
+}
+
+void	loop_hook(void *render)
+{
+	render_fract((t_render *) render);
 }
 
 void	resize_hook(int32_t width, int32_t height, void *render)
