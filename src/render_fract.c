@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/18 14:27:51 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/06/26 16:36:06 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/08 15:16:48 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ static void	render_pixel(t_render *render, t_nbr_i nbr_i, t_nbr_i c, \
 
 void	render_fract(t_render *render)
 {
-	double	scale_width;
-	double	scale_height;
-	t_nbr_i	nbr_i;
-	t_pixel_curr px;
+	double			scale_width;
+	double			scale_height;
+	t_nbr_i			nbr_i;
+	t_pixel_curr	px;
 
 	px.x = 0;
 	px.y = 0;
 	get_scale_init_nbri((*render), &scale_width, &scale_height, &nbr_i);
-	while (nbr_i.imag <= (*render).fract.i_end)
+	while (px.y <= (*render).img->height)//nbr_i.imag <= (*render).fract.i_end)
 	{
-		while (nbr_i.real <= (*render).fract.r_end)
+		while (px.x <= (*render).img->width)//nbr_i.real <= (*render).fract.r_end)
 		{
 			render_pixel(render, nbr_i, (*render).fract.c, px);
 			nbr_i.real += scale_width;

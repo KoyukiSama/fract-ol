@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/05 18:39:39 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/06/29 21:50:50 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/08 15:09:52 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ typedef struct s_pixel_curr
 	uint32_t	y;
 }	t_pixel_curr;
 
+typedef struct s_img_dim
+{
+	uint32_t	width;
+	uint32_t	height;
+}	t_img_dim;
 
 // imaginary nbr
 typedef struct s_nbr_i
@@ -101,7 +106,6 @@ void		scroll_hook(double xdelta, double ydelta, void *render);
 void		key_hook(mlx_key_data_t keydata, void *render);
 void		resize_hook(int32_t width, int32_t height, void *render);
 void		close_hook(void *render);
-void		loop_hook(void *render);
 
 //	render_fract.c;
 void		render_fract(t_render *render);

@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/11 15:09:02 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/06/29 21:51:28 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/08 15:42:29 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ int	render(int fractal_type, t_nbr_i c)
 		p_mlxerror();
 	mlx_scroll_hook(render.mlx, scroll_hook, &render);
 	mlx_key_hook(render.mlx, key_hook, &render);
-	mlx_resize_hook(render.mlx, resize_hook, &render);
-	mlx_loop_hook(render.mlx, loop_hook, &render);
 	mlx_close_hook(render.mlx, close_hook, &render);
 	render_fract(&render);
 	mlx_loop(render.mlx);

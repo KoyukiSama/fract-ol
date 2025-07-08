@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/07 17:59:21 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/06/29 22:01:34 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/08 15:28:19 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	generate_palette(uint32_t palette[])
 		palette[i++] = hsv_to_rgb(hue, sat, val);
 		hue += hue_spread * HUE_SPREAD;
 		if (hue > HUE_END)
-			hue = HUE_START - HUE_END;
+			hue = HUE_START;
 	}
 }
 
