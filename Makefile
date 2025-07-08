@@ -27,7 +27,7 @@ OBJ			:= $(OBJ_FRACT)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(DIR_MLX_A)
+$(NAME): $(DIR_MLX_A) $(OBJ)
 	@$(MAKE) -C $(DIR_LBFT)
 	$(CC) $(CFLAGS) $(DFLAGS) $(INCLUDE) $(OBJ) $(MAIN) \
 		$(DIR_LBFT)/libft.a $(MLX_FLAGS) -lm\
