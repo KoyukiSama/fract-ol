@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/05 18:39:39 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/07/08 15:09:52 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/08 19:01:33 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@
 # define EXPECTED_INPT "[EXPECTED INPUTS]:\n \
 1. ./fractol mandelbrot\n \
 2. ./fractol julia {real nbr} {imaginary nbr}\n \
-                    -300.501   -402.10i\n 3. ./fractol TODO\n"
+                    -300.501   -402.10i\n"
 # define INVALID_INP_NBR "[invalid nbr given]\n"
 
 // fractol codes
 # define JULIA 1
 # define MANDELBROT 2
-# define OTHER 3
 
 typedef struct s_pixel_curr
 {

@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/05 18:39:39 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/07/08 16:03:43 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/08 19:10:00 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 
 // color palette
 # define PALETTE_SIZE 256//don't touch
+# define COLOR_OFFSET HUE_END// HUE_END makes it reaaaally pretty, normally enter just numbers
 # define HUE_START 0// min is 0
-# define HUE_END 300// max is 360 
-# define HUE_SPREAD 10// the more you want the colors to be apart, min is 1
+# define HUE_END 150// max is 360 
+# define HUE_SPREAD 4// the more you want the colors to be apart, min is 1
 # define SAT 0.5 //min is 0, max is 1
-# define VAL 0.8 //min is 0, max is 1
+# define VAL 1 //min is 0, max is 1
 # define BREATH 4// min is 1, the bigger the faster, 
 // disable breath by typing # define BREATH time
 # define ESCP_RAD 4

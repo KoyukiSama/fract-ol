@@ -6,11 +6,12 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/18 14:27:51 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/07/08 15:16:48 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/08 17:32:48 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol_utils.h"
+#include "fractol.h"
 
 static void	get_scale_init_nbri(t_render render, double *scale_width, \
 								double *scale_height, t_nbr_i *nbr_i);
@@ -48,6 +49,8 @@ static void	render_pixel(t_render *render, t_nbr_i nbr_i, t_nbr_i c, \
 	int	in_fractol;
 	int	iters;
 
+	if (px.x < 0 || px.y < 0 || px.x >= WIDTH || px.y >= HEIGHT)
+		return ;
 	in_fractol = 0;
 	if ((*render).fract.type == MANDELBROT)
 		in_fractol = is_mandelbrot(nbr_i, get_itersmax(render), &iters);
