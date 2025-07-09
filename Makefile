@@ -7,6 +7,7 @@ DFLAGS		:= -g -fsanitize=leak
 
 DIR_SRC		:= ./src
 DIR_LBFT	:= ./libft
+DIR_LBFT_A	:= $(DIR_LBFT)/libft.a
 
 DIR_MLX		:= ./MLX42
 MLX_FLAGS	:= -I$(DIR_MLX)/include/MLX42 \
@@ -27,8 +28,7 @@ OBJ			:= $(OBJ_FRACT)
 
 all: $(NAME)
 
-$(NAME): $(DIR_MLX_A) $(OBJ)
-	@$(MAKE) -C $(DIR_LBFT)
+$(NAME): $(DIR_MLX_A) $(DIR_LBFT_A) $(OBJ)
 	$(CC) $(CFLAGS) $(DFLAGS) $(INCLUDE) $(OBJ) $(MAIN) \
 		$(DIR_LBFT)/libft.a $(MLX_FLAGS) -lm\
 		-o $(NAME)
@@ -38,13 +38,16 @@ $(DIR_MLX_A):
 	@cmake -S $(DIR_MLX) -B $(DIR_MLX)/build
 	@cmake --build $(DIR_MLX)/build -j4
 
+$(DIR_LBFT_A):
+	@$(MAKE) -C $(DIR_LBFT)
+
 $(DIR_SRC)/%.o: $(DIR_SRC)/%.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
-#	@$(MAKE) -C $(DIR_LBFT) clean
-#	@rm -rf $(DIR_MLX)/build
+	@$(MAKE) -C $(DIR_LBFT) clean
+	@rm -rf $(DIR_MLX)/build
 
 fclean: clean
 	rm -f $(NAME)

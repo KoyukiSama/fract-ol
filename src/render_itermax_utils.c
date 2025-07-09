@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/11 15:17:28 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/07/08 19:30:12 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:21:21 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,10 @@ int	get_itersmax(t_render *render)
 	return (render->fract.iter_max);
 }
 
+
 static int	pick_itersmax(double zoom)
 {
-	if (zoom > 0.1)
-		return (50);
-    else if (zoom > 0.00001)
-		return (75);
-    else if (zoom > 0.000001)
-		return (100);
-    else if (zoom > 0.00000001)
-		return (125);
-    else if (zoom > 0.0000000001)
-		return (150);
-    else if (zoom > 0.000000000001)
-		return (175);
-	else if (zoom > 0.00000000000001)
-		return (200);
-	else
-		return (300);
+	return (fmaxf((log10(1 / zoom) * 15) + 25, 50));
 }
 
 // #include <stdio.h>
