@@ -51,6 +51,8 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(DIR_LBFT)/$(DIR_LBFT_A)
+	rm -f $(DIR_MLX)/$(DIR_MLX_A)
 
 re: fclean all
 
