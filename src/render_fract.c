@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/18 14:27:51 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/07/08 17:32:48 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 14:53:32 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,9 @@ void	render_fract(t_render *render)
 static void	render_pixel(t_render *render, t_nbr_i nbr_i, t_nbr_i c, \
 							t_pixel_curr px)
 {
-	int	in_fractol;
-	int	iters;
+	int				in_fractol;
+	int				iters;
+	static double	time = 0;
 
 	if (px.x < 0 || px.y < 0 || px.x >= WIDTH || px.y >= HEIGHT)
 		return ;
@@ -59,8 +60,12 @@ static void	render_pixel(t_render *render, t_nbr_i nbr_i, t_nbr_i c, \
 	else
 		close_hook(render);
 	if (!in_fractol)
+	{
+		if (px.x == 0 && px.y == 0)
+			time = mlx_get_time();
 		mlx_put_pixel((*render).img, px.x, px.y, \
-			get_color(iters, *render, mlx_get_time()));
+			get_color(iters, *render, time));
+	}
 	else
 		mlx_put_pixel((*render).img, px.x, px.y, 0x191970);
 }

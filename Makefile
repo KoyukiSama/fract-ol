@@ -3,7 +3,7 @@ NAME		:= fractol
 CC			:= cc
 CFLAGS		:= -Wall -Wextra -Werror
 INCLUDE		:= -I./include -I./MLX42/include/MLX42/
-DFLAGS		:= -g#-fsanitize=address -fsanitize=leak
+DFLAGS		:= -g -fsanitize=leak
 
 DIR_SRC		:= ./src
 DIR_LBFT	:= ./libft
