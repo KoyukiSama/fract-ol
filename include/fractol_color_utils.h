@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/05 18:39:39 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/06/11 15:58:02 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:38:36 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_palette_i
 }	t_palette_i;
 
 // colors_genpal_utils.c
-void		get_init_hsv(double *hue, double *sat, double *val, \
+void		get_init_hsv(double *hue, double *sat, double *val,\
 						double *hue_spread);
 uint32_t	hsv_to_rgb(double hue, double sat, double val);
 

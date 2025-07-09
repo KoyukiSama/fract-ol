@@ -6,16 +6,16 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/18 14:27:51 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/07/09 14:53:32 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:43:50 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol_utils.h"
 #include "fractol.h"
 
-static void	get_scale_init_nbri(t_render render, double *scale_width, \
+static void	get_scale_init_nbri(t_render render, double *scale_width,\
 								double *scale_height, t_nbr_i *nbr_i);
-static void	render_pixel(t_render *render, t_nbr_i nbr_i, t_nbr_i c, \
+static void	render_pixel(t_render *render, t_nbr_i nbr_i, t_nbr_i c,\
 							t_pixel_curr px);
 
 void	render_fract(t_render *render)
@@ -28,9 +28,9 @@ void	render_fract(t_render *render)
 	px.x = 0;
 	px.y = 0;
 	get_scale_init_nbri((*render), &scale_width, &scale_height, &nbr_i);
-	while (px.y <= (*render).img->height)//nbr_i.imag <= (*render).fract.i_end)
+	while (px.y <= (*render).img->height)
 	{
-		while (px.x <= (*render).img->width)//nbr_i.real <= (*render).fract.r_end)
+		while (px.x <= (*render).img->width)
 		{
 			render_pixel(render, nbr_i, (*render).fract.c, px);
 			nbr_i.real += scale_width;
@@ -43,7 +43,7 @@ void	render_fract(t_render *render)
 	}
 }
 
-static void	render_pixel(t_render *render, t_nbr_i nbr_i, t_nbr_i c, \
+static void	render_pixel(t_render *render, t_nbr_i nbr_i, t_nbr_i c,\
 							t_pixel_curr px)
 {
 	int				in_fractol;
@@ -64,19 +64,19 @@ static void	render_pixel(t_render *render, t_nbr_i nbr_i, t_nbr_i c, \
 		if (px.x == 0 && px.y == 0)
 			time = mlx_get_time();
 		mlx_put_pixel((*render).img, px.x, px.y, \
-			get_color(iters, *render, time));
+get_color(iters, *render, time));
 	}
 	else
 		mlx_put_pixel((*render).img, px.x, px.y, 0x191970);
 }
 
-static void	get_scale_init_nbri(t_render render, double *scale_width, \
+static void	get_scale_init_nbri(t_render render, double *scale_width,\
 								double *scale_height, t_nbr_i *nbr_i)
 {
 	(*scale_width) = (render.fract.r_end - render.fract.r_start) \
-						/ render.img->width;
+/ render.img->width;
 	(*scale_height) = (render.fract.i_end - render.fract.i_start) \
-						/ render.img->height;
+/ render.img->height;
 	(*nbr_i).real = render.fract.r_start;
 	(*nbr_i).imag = render.fract.i_start;
 }

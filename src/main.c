@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/05 18:18:34 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/06/18 16:39:26 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:47:56 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,13 @@ int	main(int argc, char *argv[])
 		fract_type = MANDELBROT;
 	}
 	else if (argc == 4 && ft_streq("julia", argv[1], true) \
-			&& valid_real(argv[2]) && valid_imag(argv[3]))
+&& valid_real(argv[2]) && valid_imag(argv[3]))
 	{
 		const_i = julia_parse(argv[2], argv[3]);
 		fract_type = JULIA;
 	}
 	else
-		return (ft_printf(COLOR_BRIGHT_MAGENTA EXPECTED_INPT COLOR_RESET), \
-				1);
+		return (ft_printf(COLOR_BRIGHT_MAGENTA EXPECTED_INPT COLOR_RESET), 1);
 	exit_status = render(fract_type, const_i);
 	exit(exit_status);
 }

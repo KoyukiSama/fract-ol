@@ -42,7 +42,7 @@ static char	*ft_va_to_str(va_list ap, t_flags *flags)
 		str = ft_ptoa(va_arg(ap, void *));
 	if (flags->type == 'i')
 		str = ft_itoa_base_signed(va_arg(ap, int), "0123456789", \
-									&(flags->nbr_neg));
+&(flags->nbr_neg));
 	if (flags->type == 'u')
 		str = ft_itoa_base_unsigned(va_arg(ap, int), "0123456789");
 	if (flags->type == 'x')

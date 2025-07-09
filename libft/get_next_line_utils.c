@@ -6,14 +6,14 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/02 15:10:47 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/05/08 15:55:16 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:36:14 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	ft_stash_append_helpr(char *stash_new, t_stash *stash, \
+void	ft_stash_append_helpr(char *stash_new, t_stash *stash,\
 									const char *buff);
 char	*ft_clean_exit(t_stash *stash);
 
@@ -30,7 +30,7 @@ char	*ft_stash_append(t_stash *stash, const char *buff)
 	return (stash->stash_strt_ptr);
 }
 
-void	ft_stash_append_helpr(char *stash_new, t_stash *stash, \
+void	ft_stash_append_helpr(char *stash_new, t_stash *stash,\
 								const char *buff)
 {
 	size_t	i;

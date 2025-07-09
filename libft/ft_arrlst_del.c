@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/12 18:13:31 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/05/13 14:11:41 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:38:06 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // this function will delete the content at i
 // and will just NULL it out.
-t_arrlst	*ft_arrlst_del_null(t_arrlst **arrlst, size_t i, \
+t_arrlst	*ft_arrlst_del_null(t_arrlst **arrlst, size_t i,\
 									void (*del)(void *))
 {
 	if (i == (*arrlst)->len - 1)
@@ -25,7 +25,7 @@ t_arrlst	*ft_arrlst_del_null(t_arrlst **arrlst, size_t i, \
 
 // this function will delete the content at i
 // and then shift all the elements 
-t_arrlst	*ft_arrlst_del_shift(t_arrlst **arrlst, size_t i, \
+t_arrlst	*ft_arrlst_del_shift(t_arrlst **arrlst, size_t i,\
 									void (*del)(void *))
 {
 	if (i == (*arrlst)->len - 1)
@@ -49,7 +49,7 @@ t_arrlst	*ft_arrlst_del_shift(t_arrlst **arrlst, size_t i, \
 	return (*arrlst);
 }
 
-t_arrlst	*ft_arrlst_deppend(t_arrlst **arrlst, \
+t_arrlst	*ft_arrlst_deppend(t_arrlst **arrlst,\
 								void (*del)(void *))
 {
 	if ((*arrlst)->len > 0)

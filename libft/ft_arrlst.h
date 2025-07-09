@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/12 00:25:41 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/05/16 18:57:22 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:38:23 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,17 @@ t_arrlst	*ft_arrlst_grow(t_arrlst **arrlst, void (*del)(void *));
 t_arrlst	*ft_arrlst_shrink(t_arrlst **arrlst, void (*del)(void *));
 
 // (ft_arrlst_set.c)
-t_arrlst	*ft_arrlst_append(t_arrlst **arrlst, void *content, \
+t_arrlst	*ft_arrlst_append(t_arrlst **arrlst, void *content,\
 								void (*del)(void *));
-t_arrlst	*ft_arrlst_set(t_arrlst **arrlst, size_t i, void *content, \
+t_arrlst	*ft_arrlst_set(t_arrlst **arrlst, size_t i, void *content,\
 								void (*del)(void *));
 
 // (ft_arrlst_del.c)
-t_arrlst	*ft_arrlst_del_null(t_arrlst **arrlst, size_t i, \
+t_arrlst	*ft_arrlst_del_null(t_arrlst **arrlst, size_t i,\
 									void (*del)(void *));
-t_arrlst	*ft_arrlst_del_shift(t_arrlst **arrlst, size_t i, \
+t_arrlst	*ft_arrlst_del_shift(t_arrlst **arrlst, size_t i,\
 									void (*del)(void *));
-t_arrlst	*ft_arrlst_deppend(t_arrlst **arrlst, \
+t_arrlst	*ft_arrlst_deppend(t_arrlst **arrlst,\
 								void (*del)(void *));
 
 // (ft_arrlst_get.c)

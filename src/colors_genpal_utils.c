@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/07 17:59:21 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/06/11 16:02:48 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:48:13 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "stdint.h"
 #include <math.h>
 
-void	get_init_hsv(double *hue, double *sat, double *val, \
+void	get_init_hsv(double *hue, double *sat, double *val,\
 						double *hue_spread)
 {
 	double	hue_end;

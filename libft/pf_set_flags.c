@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/10 18:07:00 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/05/22 16:05:59 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:30:15 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ static void	ft_set_left_justf(char **s, t_flags *flags, int *error)
 	{
 		*error = 1;
 		return (ft_putstr_fd(RED"~[FLAGS ERROR]: \"%-\", "\
-							"- flag can not be used together with "\
-							"'0'~\n"RESET, 2));
+"- flag can not be used together with "\
+"'0'~\n"RESET, 2));
 	}
 	if (!ft_isdigit(**s))
 		flags->left_justf = 0;
@@ -70,7 +70,7 @@ static void	ft_set_perc(char **s, t_flags *flags, int *error)
 	{
 		*error = 1;
 		return (ft_putstr_fd(RED"~[FLAGS ERROR]: \"%.\", "\
-							"no number specified~\n"RESET, 2));
+"no number specified~\n"RESET, 2));
 	}
 	flags->perc_zero = '.';
 	flags->zeros_width = ft_atoi(*s);
@@ -87,14 +87,14 @@ static void	ft_set_zero(char **s, t_flags *flags, int *error)
 	{
 		*error = 1;
 		return (ft_putstr_fd(RED"~[FLAGS ERROR]: \"%0\", "\
-							"0 flag can not be used together with "\
-							"'-' or '.'~\n"RESET, 2));
+"0 flag can not be used together with "\
+"'-' or '.'~\n"RESET, 2));
 	}
 	if (!ft_isdigit(**s))
 	{
 		*error = 1;
 		return (ft_putstr_fd(RED"~[FLAGS ERROR]: \"%0\", "\
-							"no number specified~\n"RESET, 2));
+"no number specified~\n"RESET, 2));
 	}
 	flags->perc_zero = '0';
 	flags->zeros_width = ft_atoi(*s);
@@ -124,7 +124,7 @@ static void	ft_set_type(char c, t_flags *flags, int *error)
 		return (ft_last_error_check(c, error));
 	if (ft_error_type_wrong_flag(*flags, error))
 		return (ft_putstr_fd(RED"[FLAG ERROR] . "\
-							"or 0 with wrong type\n"RESET, 2));
+"or 0 with wrong type\n"RESET, 2));
 	if (flags->type == 'x' || flags->type == 'X' || flags->type == 'u')
 		flags->nbr_neg = 0;
 }

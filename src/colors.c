@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/07 17:59:21 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/07/08 19:08:54 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:48:38 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 static void			generate_palette(uint32_t palette[]);
 static t_palette_i	get_palette_index(int iters, t_render render);
-static uint32_t		lerp_color(uint32_t color1, uint32_t color2, \
+static uint32_t		lerp_color(uint32_t color1, uint32_t color2,\
 								double inter_pol);
 
 uint32_t	get_color(int iters, t_render render, double time)
@@ -34,9 +34,9 @@ uint32_t	get_color(int iters, t_render render, double time)
 		generate_palette(palette);
 	palette_i = get_palette_index(iters, render);
 	color1 = palette[(palette_i.base + (int)(time * BREATH)) \
-						& (PALETTE_SIZE - 1)];
+& (PALETTE_SIZE - 1)];
 	color2 = palette[(palette_i.base + 1 + (int)(time * BREATH)) \
-						& (PALETTE_SIZE - 1)];
+& (PALETTE_SIZE - 1)];
 	return (lerp_color(color1, color2, palette_i.leftover));
 }
 
@@ -67,13 +67,13 @@ static t_palette_i	get_palette_index(int iters, t_render render)
 	t_palette_i	palette_i;
 
 	palette_i.fract = (double)iters / render.fract.iter_max \
-						* (PALETTE_SIZE - 1);
+* (PALETTE_SIZE - 1);
 	palette_i.base = (int)palette_i.fract;
 	palette_i.leftover = palette_i.fract - palette_i.base;
 	return (palette_i);
 }
 
-static uint32_t	lerp_color(uint32_t color1, uint32_t color2, \
+static uint32_t	lerp_color(uint32_t color1, uint32_t color2,\
 							double inter_pol)
 {
 	t_rgb_uint8	rgb1;

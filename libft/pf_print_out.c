@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/14 12:08:40 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/05/24 18:17:46 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:34:39 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static int	ft_justify_write(char *str, t_flags flags, int *bytes_wrote)
 		justify_length += ft_strlen(str) - flags.zeros_width;
 	else if (flags.perc_zero)
 		justify_length -= ft_calculate_zero_s_length(flags, str) \
-						- flags.nbr_neg;
+- flags.nbr_neg;
 	if (justify_length <= 0)
 		return (1);
 	justify = malloc(justify_length);

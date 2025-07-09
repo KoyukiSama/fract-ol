@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/11 19:19:41 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/07/08 16:07:38 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:41:34 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	scroll_hook(double xdelta, double ydelta, void *render)
 
 void	key_hook(mlx_key_data_t keydata, void *render)
 {
-	int	i = 0;
+	int	i;
 
 	if (keydata.key == MLX_KEY_X || keydata.key == MLX_KEY_ESCAPE)
 	{
@@ -33,6 +33,7 @@ void	key_hook(mlx_key_data_t keydata, void *render)
 	}
 	if (keydata.key == MLX_KEY_T)
 	{
+		i = 0;
 		while (i < 100)
 			i++;
 		render_fract((t_render *) render);

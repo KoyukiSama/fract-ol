@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/05/11 17:32:11 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/05/24 18:16:51 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:27:17 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 // (ft_printf.c)
 int			ft_write(char *str, size_t length, int *bytes_wrote);
 int			ft_write_free(char *str, size_t length, int *bytes_wrote);
-int			ft_write_flagscheck(char *str, size_t length, int *bytes_wrote, \
+int			ft_write_flagscheck(char *str, size_t length, int *bytes_wrote,\
 								t_flags flags);
 
 // (pf_sometoa.c)

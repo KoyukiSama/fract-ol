@@ -6,7 +6,7 @@
 /*   By: kclaes <kclaes@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/05 18:39:39 by kclaes        #+#    #+#                 */
-/*   Updated: 2025/07/09 14:44:18 by kclaes        ########   odam.nl         */
+/*   Updated: 2025/07/09 15:38:56 by kclaes        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 // color palette
 # define PALETTE_SIZE 256//don't touch
-# define COLOR_OFFSET HUE_END// HUE_END makes it reaaaally pretty, normally enter just numbers
+# define COLOR_OFFSET HUE_END// HUE_END makes it reaaaally pretty,
+//normally enter just numbers
 # define HUE_START 160// min is 0
 # define HUE_END 360// max is 360 
 # define HUE_SPREAD 4// the more you want the colors to be apart, min is 1
